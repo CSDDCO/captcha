@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Secure Access</title>
+  <style>
+    body {
+      background: #f9f9f9;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .captcha-container {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .captcha-img {
+      width: 300px;
+      margin-bottom: 20px;
+    }
+
+    .captcha-button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .captcha-button:hover {
+      background-color: #45a049;
+    }
+
+    .subtext {
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="captcha-container">
+    <img class="captcha-img" src="data:image/jpeg;base64,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" alt="CAPTCHA Logo">
+    <p>Please verify that you are human</p>
+    <button class="captcha-button" onclick="verify()">I'm not a robot</button>
+  </div>
+
+  <script>
+    function verify() {
+      // Redirect to the next page (e.g., a training reveal)
+      window.location.href = "https://confluence.apps.eop.gov/display/CSD/CYBER+SECURITY+PHISHING+EXERCISE";
+    }
+  </script>
+</body>
+</html>
